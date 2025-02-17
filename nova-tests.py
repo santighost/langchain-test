@@ -1,7 +1,7 @@
 import os
 import time
 import logging
-import statistics
+import statistics 
 import warnings
 import boto3
 from datetime import datetime
@@ -35,7 +35,7 @@ load_dotenv()
 
 class BedrockTester:
     def __init__(self):
-        self.model_id = "us.amazon.nova-lite-v1:0"
+        self.model_id = "us.amazon.nova-micro-v1:0"
         self.bedrock_client = self._create_bedrock_client()
         
         self.test_cases = [
@@ -226,7 +226,7 @@ class BedrockTester:
             logger.error(f"Error in ChatBedrock call: {e}")
             raise
 
-    def run_comparison_tests(self, iterations: int = 5) -> None:
+    def run_comparison_tests(self, iterations: int = 15) -> None:
         results = {
             "direct": {
                 "latencies": [],

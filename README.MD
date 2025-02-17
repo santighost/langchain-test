@@ -1,6 +1,6 @@
 # Nova Tests: Performance Testing for AWS Bedrock Runtime
 
-Python script for benchmarking the performance of the AWS Bedrock runtime service using different approaches.
+Python scripts for benchmarking the performance of the AWS Bedrock runtime service using different approaches.
 
 ## Project Description
 
@@ -13,6 +13,7 @@ The main features include:
 - LangChain integration with Bedrock using ChatBedrock
 - Performance metrics collection for each approach
 - Comparison of results across multiple test cases
+- Load testing capabilities
 
 This tool is useful for developers and data scientists working with AWS Bedrock who want to optimize their application's performance and understand the tradeoffs between different integration approaches.
 
@@ -20,9 +21,10 @@ This tool is useful for developers and data scientists working with AWS Bedrock 
 
 ```
 .
-├── nova-tests.py      # Main script containing test implementations
-├── README.MD          # This file
-└── requirements.txt   # Python dependencies
+├── nova-tests.py           # Main script containing test implementations
+├── bedrock-load-test.py    # Script for load testing Bedrock
+├── README.MD               # This file
+└── requirements.txt        # Python dependencies
 ```
 
 ## Usage Instructions
@@ -55,6 +57,14 @@ python nova-tests.py
 
 This will run a series of test cases using different approaches to interact with Bedrock and output performance metrics.
 
+For load testing, run:
+
+```
+python bedrock-load-test.py
+```
+
+This will perform a load test on the Bedrock AI system and generate performance statistics and visualizations.
+
 ### Configuration
 
 You can modify the `BedrockTester` class in `nova-tests.py` to adjust test parameters such as:
@@ -62,6 +72,12 @@ You can modify the `BedrockTester` class in `nova-tests.py` to adjust test param
 - Number of test iterations
 - Prompt and system message content
 - Bedrock model selection
+
+For load testing, you can adjust parameters in the `BedrockLoadTester` class in `bedrock-load-test.py`, including:
+
+- Test duration
+- Number of concurrent workers
+- Sleep time between iterations
 
 ### Troubleshooting
 
